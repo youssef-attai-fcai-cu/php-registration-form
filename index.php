@@ -25,10 +25,9 @@
       </div>
       <div class="side">
         <div class="image"></div>
-        <div class="actors">
-          <h6>Actors born on the same day:</h6>
-
-        </div>
+        <h3>Actors born on the same day:</h3>
+        <div class="actors"></div>
+        <button>Register</button>
       </div>
     </div>
   </div>
