@@ -14,7 +14,14 @@
     <h2>Register</h2>
     <div class="container">
       <div class="fields">
-
+        <input type="text" name="full_name" placeholder="Full name">
+        <input type="text" name="username" placeholder="Username">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="confirm_password" placeholder="Confirm password">
+        <input type="date" name="birthdate" placeholder="Birthdate">
+        <input type="tel" name="phone" placeholder="Phone">
+        <input type="text" name="address" placeholder="Address">
       </div>
       <div class="side">
         <div class="image"></div>
