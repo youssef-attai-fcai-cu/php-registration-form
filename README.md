@@ -21,3 +21,13 @@ Beside the birth date field in the form, there should be a button that when clic
 - `actors/get-bio`: Retrieves actor details by passing an actor ID.
 
 
+
+## How to run:
+
+for windows
+```bash
+php -S localhost:8000 -c ./php.ini
+```
+
+
+
