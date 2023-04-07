@@ -6,15 +6,25 @@ class Database
 
     function __construct()
     {
-        $this->host_name = "HOST_NAME";
-        $this->db_name = "DBNAME";
-        $this->user_name = "USERNAME";
-        $this->password = "PASSWORD";
+        $this->host_name = "localhost";
+        $this->db_name = "dbname";
+        $this->user_name = "sherif";
+        $this->password = "Adminsherif123";
         try {
             $this->conn = new PDO("mysql:host=$this->host_name", $this->user_name, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $result = $this->conn->query('SHOW DATABASES');
+            $databases = $result->fetchAll(PDO::FETCH_COLUMN);
+            error_log(print_r($databases, true));
+            if (in_array($this->db_name, $databases)) {
+                $this->conn->exec("USE $this->db_name");
+                error_log("Database exists");
+            } else {
+                error_log("Database does not exist");
+                $this->create_database();
+            }
         } catch (PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
+            error_log('Error: ' . $e->getMessage());
         }
     }
     function create_database()
@@ -22,10 +32,12 @@ class Database
         try {
             $sql = "CREATE DATABASE $this->db_name";
             $this->conn->exec($sql);
-            echo "Database created successfully";
+            error_log("Database created successfully");
+            $this->conn->exec("USE $this->db_name");
         } catch (PDOException $e) {
-            echo $sql . "<br>" . $e->getMessage();
+            error_log($sql . "<br>" . $e->getMessage());
         }
+        
     }
     function create_table()
     {
@@ -34,20 +46,29 @@ class Database
             $sql = "CREATE TABLE user (
                 fullname VARCHAR(200) NOT NULL,
                 username VARCHAR(50)  PRIMARY KEY,
-                email VARCHAR(50),
-                ImageName varchar(200),
-                phone VARCHAR(50),
-                Addr VARCHAR(50),
-                pwd VARCHAR(50),
+                email VARCHAR(50) NOT NULL,
+                ImageName varchar(200) NOT NULL,
+                phone VARCHAR(50) NOT NULL,
+                Addr VARCHAR(50) NOT NULL,
+                pwd VARCHAR(50) NOT NULL
             )";
-            $this->conn->exec($sql);
-            echo "Table MyGuests created successfully";
-
             // use exec() because no results are returned
             $this->conn->exec($sql);
-            echo "Table MyGuests created successfully";
+            error_log("Table user created successfully");
         } catch (PDOException $e) {
-            echo $sql . "<br>" . $e->getMessage();
+            error_log($sql . "<br>" . $e->getMessage());
+        }
+    }
+    function insert_data($fullname, $username, $email,$image_name, $phone, $addr, $pwd)
+    {
+        try {
+            $sql = "INSERT INTO user (fullname, username, email,ImageName, phone, Addr, pwd)
+            VALUES ('$fullname', '$username', '$email','$image_name', '$phone', '$addr', '$pwd')";
+            // use exec() because no results are returned
+            $this->conn->exec($sql);
+            error_log("New record created successfully");
+        } catch (PDOException $e) {
+            error_log($sql . "<br>" . $e->getMessage());
         }
     }
     function __destruct()
