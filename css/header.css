@@ -1,6 +1,7 @@
+@import "colors.css";
 .header{
     overflow: hidden;
-    background-color: #333;
+    background: var(--header-color);
     width: 100%;
     top: 0;
 }
@@ -13,7 +14,7 @@
     padding: 0 10%;
 }
 .header h3{
-    color: #efefef;
+    color: var(--secondary-color);
     font-weight: 300;
     letter-spacing: 1px;
 }

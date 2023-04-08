@@ -1,7 +1,8 @@
+@import "colors.css";
  .footer{
     width: 100%;
-    background: #333;
-    color:#efefef;
+    background: var(--header-color);
+    color: var(--secondary-color);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
