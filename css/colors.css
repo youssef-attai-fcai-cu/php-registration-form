@@ -1,25 +1,51 @@
-:root {
-  --background-color: #e7e5e4;
-  --primary-color: #b49595;
-  --secondary-color: #403d3d;
-  --form-color: #a6a6a6;
-  --background-input: #ffffff;
-  --background-button: #3479ff;
-  --header-color: #e7e5e4;
-  --footer-color: #e7e5e4;
-  --hover-color: #2c5fc4;
+:root{
+  --warm--gray-900: #1c1917;
+  --warm--gray-800: #292524;
+  --warm--gray-700: #403d3d;
+  --warm--gray-400: #a6a6a6;
+  --warm--gray-300: #d6d3d1;
+  --warm--gray-200: #e7e5e4;
+  --blue: #3479ff;
+  --blue--dark: #2c5fc4;
+}
+[theme="light"] {
+  --background-color:var(--warm--gray-200);
+  --primary-color: var(--warm--gray-700);
+  --secondary-color: var(--warm--gray-200);
+  --form-color: var(--warm--gray-300);
+  --form-color-text: var(--warm--gray-900);
+  --image-color: var(--warm--gray-200);
+  --image-text: var(--warm--gray-700);
+  --background-input: var(--warm--gray-200);
+  --background-button: var(--blue);
+  --text-button: var(--warm--gray-200);
+  --header-color: var(--warm--gray-200);
+  --header-text-color: var(--warm--gray-900);
+  --footer-color: var(--warm--gray-200);
+  --footer-text-color: var(--warm--gray-900);
+  --hover-color: var(--blue--dark);
+  --text-input:var(--warm--gray-700);
+  --icon-inverter:100%;
 }
 
 /* Dark theme */
 [theme="dark"] {
-  --background-color: #1c1917;
-  --primary-color: #a6a6a6;
-  --secondary-color: #292524;
-  --background-input: #e7e5e4;
-  --background-button: #3479ff;
-  --header-color:  #292524;
-  --footer-color:  #292524;
-  --hover-color: #2c5fc4;
-  --warm--gray-700: #403d3d;
-  --warm--gray-300: #d6d3d1;
+  --background-color:var(--warm--gray-900);
+  --primary-color: var(--warm--gray-300);
+  --secondary-color: var(--warm--gray-700);
+  --form-color: var(--warm--gray-800);
+  --form-color-text: var(--warm--gray-200);
+  --image-color: var(--warm--gray-700);
+  --image-text: var(--warm--gray-400);
+  --background-input: var(--warm--gray-200);
+  --background-button: var(--blue);
+  --text-button: var(--warm--gray-200);
+  --header-color: var(--warm--gray-900);
+  --header-text-color: var(--warm--gray-300);
+  --footer-color: var(--warm--gray-900);
+  --footer-text-color: var(--warm--gray-300);
+  --hover-color: var(--blue--dark);
+  --text-input:var(--warm--gray-400);
+  --icon-inverter:0%;
+ 
 }
