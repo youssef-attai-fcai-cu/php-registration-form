@@ -1,6 +1,6 @@
 const toggleSwitch =
     document.querySelector('.theme-slider input[type="checkbox"]');
-  
+    document.documentElement.setAttribute('theme', 'dark');
 /* Function to change theme */
 function switchTheme(e) {
   
