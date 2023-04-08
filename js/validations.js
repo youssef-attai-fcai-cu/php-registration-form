@@ -3,7 +3,7 @@ let inputFields = document.querySelectorAll(
 );
 let submitButton = document.getElementById(`register-btn`);
 
-let uploadImgInput = document.getElementById(`user_image`);
+let uploadImgInput = document.getElementById(`file-upload`);
 function checkEmptyFields() {
   for (let i = 0; i < inputFields.length; i++) {
     if (inputFields[i].value === `` && inputFields[i].id !== `birth`) {
