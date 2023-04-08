@@ -1,3 +1,6 @@
 <div class="header">
-<h3>Our website</h3>
+    <div class="title"><h3>Our website</h3>
+    <div class="my-icon"></div>
+</div>
+    
 </div>

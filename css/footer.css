@@ -1,4 +1,4 @@
-.footer{
+ .footer{
     margin-top: 150px;
     width: 100%;
     padding: 100px 15%;
@@ -8,49 +8,24 @@
     flex-direction: row;
     justify-content: space-between;
 
-}
-.footer div{
-    text-align: center;
+ }
 
+.container{
 
-}
-.col2 {
-    flex-grow: 2;
-}
-.footer div h3{
-    font-weight: 300;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-}
-.col1 a{
-    display: block;
-    text-decoration: none;
-    color:#efefef;
-    margin-bottom: 10px;
-}
-form input{
-    width: 400px;
-    height: 45px;
-    border-radius: 4px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    outline: none;
-}
-form button{
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    border-radius: 30px;
-    padding: 10px 30px;
-    font-size: 15px;
-    cursor: pointer;
-}
-.col3{
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+.container h2{
+    display: flex;
+    justify-content: center;
+}
+/* .footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+} */
+
 .madeby{
     display: flex;
     flex-direction: row;

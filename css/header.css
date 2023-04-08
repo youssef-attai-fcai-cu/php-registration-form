@@ -1,5 +1,24 @@
 .header{
-    background-color:  #333;
-    height: 50px;
+    overflow: hidden;
+    background-color: #333;
     width: 100%;
+    top: 0;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+h3{
+    color: #efefef;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.my-icon{
+    background: url(../svg/GitHub.svg) no-repeat center center;
+    width: 52px;
+    height: 52px;
 }
