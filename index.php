@@ -44,7 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Register - Out Website</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/validations.css">
   <script src="js/imageUpload.js" defer></script>
+  <script src="js/validations.js" defer></script>
 </head>
 
 <body>
@@ -54,18 +56,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <h2>Register</h2>
       <div class="container">
         <div class="fields">
-          <input type="text" name="full_name" placeholder="Full name">
-          <input type="text" name="username" placeholder="Username">
-          <input type="email" name="email" placeholder="Email">
-          <input type="password" name="password" placeholder="Password">
-          <input type="password" name="confirm_password" placeholder="Confirm password">
-          <input type="text" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')" onblur="(this.type='text')">
-          <input type="tel" name="phone" placeholder="Phone">
-          <input type="text" name="address" placeholder="Address">
+          <input type="text" id="full_name" name="full_name" placeholder="Full name" required>
+          <input type="text" id="username" name="username" placeholder="Username" required>
+          <input type="email" id="mail" name="email" placeholder="Email" required>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+          <input type="text" id="birth" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+          <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+          <input type="text" id="address" name="address" placeholder="Address" required>
         </div>
         <div class="side">
           <div class="image">
-            <input type="file" name="user_image" id="file-upload">
+            <input type="file" id="user_image" name="user_image" id="file-upload" required>
             <img src="" height="200" alt="User image preview">
             <div class="no-image">
               <div class="icon upload-icon"></div>
@@ -74,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
           <h3>Actors born on the same day:</h3>
           <div class="actors"></div>
-          <button type="submit">Register</button>
+          <button id="register-btn" type="submit">Register</button>
         </div>
       </div>
     </form>
