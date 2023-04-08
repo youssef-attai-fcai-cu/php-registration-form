@@ -1,0 +1,36 @@
+ .footer{
+    width: 100%;
+    background: #333;
+    color:#efefef;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+ }
+
+.footer .container{
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.footer .container h2{
+    display: flex;
+    justify-content: center;
+}
+/* .footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+} */
+
+.madeby{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.madeby div{
+    display: flex;
+    flex-direction: column;
+}

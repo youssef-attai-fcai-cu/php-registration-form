@@ -44,11 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Register - Out Website</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
   <script src="js/imageUpload.js" defer></script>
 </head>
 
 <body>
   <?php include "header.php" ?>
+  <div class="wrapper">
   <div class="form">
     <form action="" method="post">
       <h2>Register</h2>
@@ -78,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
       </div>
     </form>
+  </div>
   </div>
   <?php include "footer.php" ?>
 </body>
