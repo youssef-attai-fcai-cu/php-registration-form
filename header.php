@@ -3,7 +3,7 @@
     <div class="my-icon"></div>
     <div class="theme-switch-container">
                 <label class="theme-slider" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
+                    <input type="checkbox" id="checkbox" checked />
                     <div class="round slider"></div>
                 </label>
             </div>
