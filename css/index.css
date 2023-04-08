@@ -36,7 +36,7 @@ input {
   padding: 10px;
   border: none;
   outline: none;
-  background: var(--backfground-input);
+  background: var(--background-input);
   color: var(--form-color);
   font-size: 1.2rem;
   line-height: 0;
@@ -56,7 +56,7 @@ img[src=""] {
 }
 
 input::placeholder {
-  color: var(--secondary-color);
+  color: var(--text-input);
 }
 
 button {
@@ -69,8 +69,8 @@ button {
   border-radius: 36px;
   font-size: 1.2rem;
   line-height: 0;
-  background: var( --background-button);
-  color: var( --secondary-color);
+  background: var(--background-button);
+  color: var( --text-button);
 }
 
 button:hover {

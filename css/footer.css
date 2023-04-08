@@ -1,8 +1,8 @@
 @import "colors.css";
  .footer{
     width: 100%;
-    background: var(--header-color);
-    color: var(--secondary-color);
+    background: var(--footer-color);
+    color: var(--footer-text-color);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
