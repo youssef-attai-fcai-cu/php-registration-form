@@ -35,6 +35,14 @@ input[type="date"] {
   line-height: normal;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+img[src=""] {
+  visibility: hidden;
+}
+
 input::placeholder {
   color: var(--warm--gray-400);
 }

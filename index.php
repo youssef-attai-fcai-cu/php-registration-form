@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
   <title>Register - Out Website</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/form.css">
+  <script src="js/imageUpload.js" defer></script>
 </head>
+
 <body>
   <?php include "header.php" ?>
   <div class="form">
@@ -24,7 +27,14 @@
         <input type="text" name="address" placeholder="Address">
       </div>
       <div class="side">
-        <div class="image"></div>
+        <div class="image">
+          <input type="file" name="user_image" id="file-upload">
+          <img src="" height="200" alt="User image preview">
+          <div class="no-image">
+            <div class="icon upload-icon"></div>
+            <p>Upload an image</p>
+          </div>
+        </div>
         <h3>Actors born on the same day:</h3>
         <div class="actors"></div>
         <button>Register</button>
@@ -33,4 +43,5 @@
   </div>
   <?php include "footer.php" ?>
 </body>
+
 </html>
