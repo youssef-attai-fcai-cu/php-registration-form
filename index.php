@@ -1,3 +1,39 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Make sure all fields exist
+  echo print_r($_POST);
+  if (
+    isset(
+      $_POST['full_name'],
+      $_POST['username'],
+      $_POST['email'],
+      $_POST['password'],
+      $_POST['confirm_password'],
+      $_POST['birthdate'],
+      $_POST['phone'],
+      $_POST['address'],
+      $_POST['user_image']
+    ) && !empty($_POST['full_name'])
+    && !empty($_POST['username'])
+    && !empty($_POST['email'])
+    && !empty($_POST['password'])
+    && !empty($_POST['confirm_password'])
+    && !empty($_POST['birthdate'])
+    && !empty($_POST['phone'])
+    && !empty($_POST['address'])
+    && !empty($_POST['user_image'])
+  ) {
+    echo "All fields exist";
+  } else {
+    echo "Missing fields";
+  }
+  die();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
