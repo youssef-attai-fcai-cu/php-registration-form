@@ -22,7 +22,7 @@
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
         <input type="password" name="confirm_password" placeholder="Confirm password">
-        <input type="date" name="birthdate" placeholder="Birthdate">
+        <input type="text" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')" onblur="(this.type='text')">
         <input type="tel" name="phone" placeholder="Phone">
         <input type="text" name="address" placeholder="Address">
       </div>
