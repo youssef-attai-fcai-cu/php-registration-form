@@ -1,7 +1,7 @@
 let inputFields = document.querySelectorAll(
   `input[type="text"], input[type="password"], input[type="email"]`
 );
-let submitButton = document.getElementById(`register-btn`);
+let submitButton = document.querySelector(`button[type="submit"]`);
 
 let uploadImgInput = document.getElementById(`file-upload`);
 function checkEmptyFields() {
