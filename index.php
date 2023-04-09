@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="side">
         <div class="image">
-          <input type="file" name="user_image" id="file-upload">
+          <input type="file" name="user_image">
           <img src="" height="200" alt="User image preview">
           <div class="no-image">
             <div class="icon upload-icon"></div>
