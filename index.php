@@ -1,33 +1,79 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // echo post data
+  echo print_r($_POST, true);
+
   // Make sure all fields exist
-  if (
-    isset(
-      $_POST['full_name'],
-      $_POST['username'],
-      $_POST['email'],
-      $_POST['password'],
-      $_POST['confirm_password'],
-      $_POST['birthdate'],
-      $_POST['phone'],
-      $_POST['address'],
-      $_POST['user_image']
-    ) && !empty($_POST['full_name'])
-    && !empty($_POST['username'])
-    && !empty($_POST['email'])
-    && !empty($_POST['password'])
-    && !empty($_POST['confirm_password'])
-    && !empty($_POST['birthdate'])
-    && !empty($_POST['phone'])
-    && !empty($_POST['address'])
-    && !empty($_POST['user_image'])
-  ) {
-    echo "All fields exist";
-  } else {
-    echo "Missing fields";
+  // check them one by one to provide clear error messages
+  if (!isset($_POST['full_name']) || empty($_POST['full_name'])) {
+    die('Full name is required');
   }
-  die();
+  if (!isset($_POST['username']) || empty($_POST['username'])) {
+    die('Username is required');
+  }
+  if (!isset($_POST['email']) || empty($_POST['email'])) {
+    die('Email is required');
+  }
+  if (!isset($_POST['password']) || empty($_POST['password'])) {
+    die('Password is required');
+  }
+  if (!isset($_POST['birthdate']) || empty($_POST['birthdate'])) {
+    die('Birthdate is required');
+  }
+  if (!isset($_POST['phone']) || empty($_POST['phone'])) {
+    die('Phone is required');
+  }
+  if (!isset($_POST['address']) || empty($_POST['address'])) {
+    die('Address is required');
+  }
+
+  // Make sure all fields are valid, check them one by one to provide clear error messages
+
+  // Make sure email is valid
+  if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    die('Email is invalid');
+  }
+
+  // Make sure password is at least 8 characters with at least 1 number literal and 1 special character
+  // without using regex
+  $password = $_POST['password'];
+  if (strlen($password) < 8) {
+    die('Password must be at least 8 characters');
+  }
+
+  $has_number = false;
+  $has_special_character = false;
+
+  // Check each character in the password if it's a number or a special character
+  for ($i = 0; $i < strlen($password); $i++) {
+    // The is_numeric() function checks whether a variable is a number or a numeric string.
+    if (is_numeric($password[$i])) {
+      $has_number = true;
+    }
+    // The ctype_alnum() function checks for alphanumeric character(s).
+    if (!ctype_alnum($password[$i])) {
+      $has_special_character = true;
+    }
+  }
+
+  // Make sure the password has at least 1 number literal and 1 special character
+  if (!$has_number || !$has_special_character) {
+    die('Password must contain at least 1 number literal and 1 special character');
+  }
+
+  // Make sure a file was uploaded and it's an image (field name is user_image)
+  if (!isset($_FILES['user_image']) || $_FILES['user_image']['error'] !== UPLOAD_ERR_OK) {
+    die('Image is required');
+  }
+
+  // Make sure the file is an image (jpeg, png, jpg)
+  $allowed_types = ['image/jpeg', 'image/png', 'image/jpg'];
+  if (!in_array($_FILES['user_image']['type'], $allowed_types)) {
+    die('Image must be a jpeg, png or jpg');
+  }
+
+  echo 'All fields are valid';
 }
 
 ?>
@@ -44,11 +90,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/validations.css">
-  <script src="js/validations.js" defer></script>
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <script src="js/imageUpload.js" defer></script>
   <script src="js/theme-switcher.js" defer></script>
+  <script src="js/validations.js" defer></script>
+  <script src="js/submit.js" defer></script>
 </head>
 
 <body>
