@@ -1,0 +1,10 @@
+input.invalid {
+    border: 2px solid red;
+}
+
+input[title]::before {
+    content: "⚠ ";
+    font-size: smaller;
+    color: red;
+    margin-right: 4px;
+}

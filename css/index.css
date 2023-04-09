@@ -8,24 +8,36 @@
   font-family: "Roboto", sans-serif;
 }
 
+
+
+
 html,
 body {
   height: 100%;
-  background: var(--warm--gray-900);
+  background: var( --background-color);
 }
 
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
 input {
   padding: 10px;
   border: none;
   outline: none;
-  background: var(--warm--gray-200);
-  color: var(--warm--gray-800);
+  background: var(--background-input);
+  color: var(--form-color);
   font-size: 1.2rem;
   line-height: 0;
 }
@@ -44,7 +56,7 @@ img[src=""] {
 }
 
 input::placeholder {
-  color: var(--warm--gray-400);
+  color: var(--text-input);
 }
 
 button {
@@ -57,12 +69,12 @@ button {
   border-radius: 36px;
   font-size: 1.2rem;
   line-height: 0;
-  background: var(--blue);
-  color: var(--warm--gray-200);
+  background: var(--background-button);
+  color: var( --text-button);
 }
 
 button:hover {
-  background: var(--blue--dark);
+  background: var(---hover-color);
 }
 
 a {
