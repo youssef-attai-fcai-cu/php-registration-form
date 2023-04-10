@@ -73,7 +73,7 @@ function get_actor_bio($nconst)
 #test
 
 // Get the list of actors born on a specific day and month
-$actors_list = get_actors(7, 27);
+$actors_list = get_actors($_GET['month'], $_GET['day']);
 
 // Extract the IDs using regular expression
 preg_match_all('/\/name\/([a-z0-9]+)/i', $actors_list, $matches);
