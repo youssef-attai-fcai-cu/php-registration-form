@@ -71,6 +71,21 @@ class Database
             error_log($sql . "<br>" . $e->getMessage());
         }
     }
+    function user_exists($username)
+    {
+        try {
+            $sql = "SELECT * FROM user WHERE username = '$username'";
+            $result = $this->conn->query($sql);
+            $user = $result->fetch(PDO::FETCH_ASSOC);
+            if ($user) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            error_log($sql . "<br>" . $e->getMessage());
+        }
+    }
     function __destruct()
     {
         $this->conn = null;
