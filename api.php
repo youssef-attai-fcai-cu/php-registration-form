@@ -89,11 +89,14 @@ foreach ($response_ids as $id) {
     if ($counter == 3) break;
 }
 
-
+$res = array("actors" => array());
 
 // Print all the actors names and their images
 foreach ($actors_data as $actor) {
     $img_result = $actor['image']['url'];
-    echo $actor['name'] . "<br>";
-    echo "<img src='$img_result' alt='actor image' width='200' height='300'> <br>";
+    // echo $actor['name'] . "<br>";
+    // echo "<img src='$img_result' alt='actor image' width='200' height='300'> <br>";
+    $res['actors'][] = array('name' => $actor['name'], 'image' => $img_result);
 }
+
+echo json_encode($res);
