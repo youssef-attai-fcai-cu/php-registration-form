@@ -35,9 +35,6 @@ function get_actors($Month, $Day)
 // Get the actor's bio
 function get_actor_bio($nconst)
 {
-
-
-
     $curl = curl_init();
 
     curl_setopt_array($curl, [
@@ -68,9 +65,6 @@ function get_actor_bio($nconst)
     }
 }
 
-
-
-#test
 
 // Get the list of actors born on a specific day and month
 $actors_list = get_actors($_GET['month'], $_GET['day']);
