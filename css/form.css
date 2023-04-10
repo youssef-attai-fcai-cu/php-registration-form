@@ -106,6 +106,26 @@
   gap: 10px;
   background: var(--secondary-color);
   border-radius: 24px;
+  padding: 10px;
+}
+
+.form .container > .side > .actors > .actor > p {
+  font-size: 1.1rem;
+  color: var(--form-color-text);
+  font-weight: 500;
+}
+
+.form .container > .side > .actors > .actor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form .container > .side > .actors > .actor > img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 40px;
 }
 
 .icon {
