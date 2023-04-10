@@ -1,11 +1,14 @@
 <?php
 
-// Directory to upload files to
-$target_dir = "uploads/";
+function uploadImage($image)
+{
+  echo "function is found";
+  // Directory to upload files to
+  $target_dir = __DIR__ . '/' . 'uploads/';
 
-// Get the file name and extension
-$target_file = $target_dir . basename($_FILES["user_image"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+  // Get the file name and extension
+  $target_file = $target_dir . $image;
+  $imageFileType = strtolower(pathinfo($_FILES['user_image']['name'], PATHINFO_EXTENSION));
 
 $uploadOk = 1;
 
@@ -42,4 +45,4 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-?>
+}

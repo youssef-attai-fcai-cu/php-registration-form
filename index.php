@@ -87,13 +87,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $birthdate = $_POST['birthdate'];
   $phone = $_POST['phone'];
   $address = $_POST['address'];
+  $image = $username . '.' . pathinfo($_FILES['user_image']['name'], PATHINFO_EXTENSION);
+
+
 
   // Make sure the username is unique
   if ($database->user_exists($username)) {
     die('Username already exists');
-  }
+  } else {
+    $database->insert_data($full_name, $username, $email, $image, $phone, $address, $password, $birthdate);
 
-  die('Success');
+    include __DIR__ . '/upload.php';
+    uploadImage($image);
+
+    die('Success');
+  }
 }
 
 ?>
