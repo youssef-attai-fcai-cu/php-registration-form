@@ -12,6 +12,12 @@
     align-items: center;
     padding: 0 10%;
 }
+.container-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .header h3{
     color: #efefef;
     font-weight: 300;
@@ -21,6 +27,9 @@
     background: url(../svg/GitHub.svg) no-repeat center center;
     width: 52px;
     height: 52px;
+    filter:invert(var(--icon-inverter));
+    margin-inline: 25px;
+
 }
 .theme-switch-container {
     display: flex;
