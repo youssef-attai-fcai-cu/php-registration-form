@@ -48,10 +48,11 @@ class Database
                 fullname VARCHAR(200) NOT NULL,
                 username VARCHAR(50)  PRIMARY KEY,
                 email VARCHAR(50) NOT NULL,
-                ImageName varchar(200) NOT NULL,
+                img VARCHAR(200) NOT NULL,
                 phone VARCHAR(50) NOT NULL,
-                Addr VARCHAR(50) NOT NULL,
-                pwd VARCHAR(50) NOT NULL
+                addr VARCHAR(50) NOT NULL,
+                pwd VARCHAR(50) NOT NULL,
+                birthdate VARCHAR(50) NOT NULL
             )";
             // use exec() because no results are returned
             $this->conn->exec($sql);
@@ -60,11 +61,11 @@ class Database
             error_log($sql . "<br>" . $e->getMessage());
         }
     }
-    function insert_data($fullname, $username, $email,$image_name, $phone, $addr, $pwd)
+    function insert_data($fullname, $username, $email, $img, $phone, $addr, $pwd, $birthdate)
     {
         try {
-            $sql = "INSERT INTO user (fullname, username, email,ImageName, phone, Addr, pwd)
-            VALUES ('$fullname', '$username', '$email','$image_name', '$phone', '$addr', '$pwd')";
+            $sql = "INSERT INTO user (fullname, username, email, img, phone, addr, pwd, birthdate)
+            VALUES ('$fullname', '$username', '$email','$img', '$phone', '$addr', '$pwd', '$birthdate')";
             // use exec() because no results are returned
             $this->conn->exec($sql);
             error_log("New record created successfully");
