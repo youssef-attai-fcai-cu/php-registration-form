@@ -4,12 +4,13 @@ class Database
 
     private $host_name, $db_name, $user_name, $password, $conn;
 
-    function __construct()
+    function __construct($host_name, $db_name, $user_name, $password)
     {
-        $this->host_name = "localhost";
-        $this->db_name = "dbname";
-        $this->user_name = "sherif";
-        $this->password = "Adminsherif123";
+        $this->host_name = $host_name;
+        $this->db_name = $db_name;
+        $this->user_name = $user_name;
+        $this->password = $password;
+
         try {
             $this->conn = new PDO("mysql:host=$this->host_name", $this->user_name, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
