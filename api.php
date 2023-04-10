@@ -86,7 +86,7 @@ $actors_data = array();
 foreach ($response_ids as $id) {
     $counter++;
     $actors_data[] = get_actor_bio($id);
-    if ($counter == 10) break;
+    if ($counter == 3) break;
 }
 
 
