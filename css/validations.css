@@ -1,4 +1,11 @@
-.invalid {
+input,
+.image{
+    transition: border 0.25s ease-in;
+    border: 0px solid #000;
+}
+
+input.invalid,
+.image.invalid {
     transition: border 0.25s ease-in;
     border: 3px solid #df0909;
 }
