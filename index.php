@@ -124,6 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <script src="js/imageUpload.js" defer></script>
   <script src="js/submit.js" defer></script>
   <script src="js/validations.js" defer></script>
+  <script src="js/actors.js" defer></script>
 </head>
 
 <body>
