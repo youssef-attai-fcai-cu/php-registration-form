@@ -17,7 +17,7 @@
 .form h2 {
   font-weight: 600;
   font-size: 2.5rem;
-  color: var( --form-color-text);
+  color: var(--form-color-text);
 }
 .form h3 {
   color: var(--form-color-text);
@@ -106,6 +106,26 @@
   gap: 10px;
   background: var(--secondary-color);
   border-radius: 24px;
+  padding: 10px;
+}
+
+.form .container > .side > .actors > .actor > p {
+  font-size: 1.1rem;
+  color: var(--form-color-text);
+  font-weight: 500;
+}
+
+.form .container > .side > .actors > .actor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form .container > .side > .actors > .actor > img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 40px;
 }
 
 .icon {
@@ -113,6 +133,26 @@
   height: 28px;
   width: 28px;
   padding: 20px;
+}
+
+.loading {
+  background: url(../svg/loading.svg) no-repeat center center;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  filter:invert(calc(100% - var(--icon-inverter)));
+  align-self: center;
+  animation: spin 1s linear infinite;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .upload-icon {

@@ -35,9 +35,6 @@ function get_actors($Month, $Day)
 // Get the actor's bio
 function get_actor_bio($nconst)
 {
-
-
-
     $curl = curl_init();
 
     curl_setopt_array($curl, [
@@ -69,11 +66,8 @@ function get_actor_bio($nconst)
 }
 
 
-
-#test
-
 // Get the list of actors born on a specific day and month
-$actors_list = get_actors(7, 27);
+$actors_list = get_actors($_GET['month'], $_GET['day']);
 
 // Extract the IDs using regular expression
 preg_match_all('/\/name\/([a-z0-9]+)/i', $actors_list, $matches);
@@ -86,14 +80,17 @@ $actors_data = array();
 foreach ($response_ids as $id) {
     $counter++;
     $actors_data[] = get_actor_bio($id);
-    if ($counter == 10) break;
+    if ($counter == 3) break;
 }
 
-
+$res = array("actors" => array());
 
 // Print all the actors names and their images
 foreach ($actors_data as $actor) {
     $img_result = $actor['image']['url'];
-    echo $actor['name'] . "<br>";
-    echo "<img src='$img_result' alt='actor image' width='200' height='300'> <br>";
+    // echo $actor['name'] . "<br>";
+    // echo "<img src='$img_result' alt='actor image' width='200' height='300'> <br>";
+    $res['actors'][] = array('name' => $actor['name'], 'image' => $img_result);
 }
+
+echo json_encode($res);

@@ -1,6 +1,4 @@
 <?php
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // echo post data
@@ -124,6 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <script src="js/imageUpload.js" defer></script>
   <script src="js/submit.js" defer></script>
   <script src="js/validations.js" defer></script>
+  <script src="js/actors.js" defer></script>
 </head>
 
 <body>
@@ -152,7 +151,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
           </div>
           <h3>Actors born on the same day:</h3>
-          <div class="actors"></div>
+          <div class="actors">
+            <div class="loading"></div>
+          </div>
           <button type="submit">Register</button>
         </div>
       </div>
