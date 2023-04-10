@@ -152,7 +152,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
           </div>
           <h3>Actors born on the same day:</h3>
-          <div class="actors"></div>
+          <div class="actors">
+            <div class="loading"></div>
+          </div>
           <button type="submit">Register</button>
         </div>
       </div>
