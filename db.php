@@ -38,7 +38,7 @@ class Database
         } catch (PDOException $e) {
             error_log($sql . "<br>" . $e->getMessage());
         }
-        
+        $this->create_table();
     }
     function create_table()
     {
@@ -60,7 +60,7 @@ class Database
             error_log($sql . "<br>" . $e->getMessage());
         }
     }
-    function insert_data($fullname, $username, $email,$image_name, $phone, $addr, $pwd)
+    function insert_data($fullname, $username, $email, $image_name, $phone, $addr, $pwd)
     {
         try {
             $sql = "INSERT INTO user (fullname, username, email,ImageName, phone, Addr, pwd)
