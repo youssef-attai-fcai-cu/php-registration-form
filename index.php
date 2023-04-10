@@ -92,10 +92,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="css/validations.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-  <script src="js/imageUpload.js" defer></script>
   <script src="js/theme-switcher.js" defer></script>
-  <script src="js/validations.js" defer></script>
+  <script src="js/imageUpload.js" defer></script>
   <script src="js/submit.js" defer></script>
+  <script src="js/validations.js" defer></script>
 </head>
 
 <body>

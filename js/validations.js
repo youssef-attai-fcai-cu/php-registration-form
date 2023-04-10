@@ -273,5 +273,9 @@ function validateAddress() {
 // Grouping all the validations together and calling them when the register button is clicked
 // If there are any errors, the user will be alerted with the respective error message
 submitButton.addEventListener(`click`, (e) => {
-  checkEmptyFields();
+  if (checkEmptyFields()) {
+    submitForm();
+  } else {
+    console.log(`Please fill in all the required fields`);
+  }
 });

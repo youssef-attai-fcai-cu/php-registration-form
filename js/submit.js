@@ -25,7 +25,7 @@ const address = document.querySelector('input[name="address"]');
 const fileInput = document.querySelector('input[type="file"]');
 
 // Add event listener to the submit button
-submitBtn.addEventListener("click", (e) => {
+function submitForm(e) {
   // Send a POST request to index.php using AJAX
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "index.php", true);
@@ -50,4 +50,4 @@ submitBtn.addEventListener("click", (e) => {
 
   // Send the request
   xhr.send(formData);
-});
+}
