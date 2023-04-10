@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   include __DIR__ . '/db.php';
 
-  $database = new Database("localhost", "project", "attai", "JJ1717jj");
+  $database = new Database("localhost", "project", "attai", "YOUR_PASSWORD");
 
   // Save the user data in the database
   $full_name = $_POST['full_name'];
