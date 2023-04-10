@@ -13,6 +13,12 @@
     align-items: center;
     padding: 0 10%;
 }
+.container-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .header h3{
     color: var(--header-text-color);
     font-weight: 300;
@@ -23,6 +29,8 @@
     width: 52px;
     height: 52px;
     filter:invert(var(--icon-inverter));
+    margin-inline: 25px;
+
 }
 
 
