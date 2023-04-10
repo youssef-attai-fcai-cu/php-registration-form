@@ -1,6 +1,8 @@
 <?php
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
   // echo post data
   echo print_r($_POST, true);
 
@@ -73,7 +75,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     die('Image must be a jpeg, png or jpg');
   }
 
-  echo 'All fields are valid';
+  include __DIR__ . '/db.php';
+
+  $database = new Database();
+
+  // Save the user data in the database
+  $full_name = $_POST['full_name'];
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $birthdate = $_POST['birthdate'];
+  $phone = $_POST['phone'];
+  $address = $_POST['address'];
+
+  // Make sure the username is unique
+  
+
+  die('Success');
 }
 
 ?>
