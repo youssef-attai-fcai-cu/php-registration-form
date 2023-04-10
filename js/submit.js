@@ -46,7 +46,7 @@ function submitForm(e) {
   formData.append("birthdate", birthdate.value);
   formData.append("phone", phone.value);
   formData.append("address", address.value);
-  formData.append("file", fileInput.files[0]);
+  formData.append("user_image", fileInput.files[0]);
 
   // Send the request
   xhr.send(formData);
