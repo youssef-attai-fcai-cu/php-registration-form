@@ -13,6 +13,7 @@
   --primary-color: var(--warm--gray-700);
   --secondary-color: var(--warm--gray-200);
   --form-color: var(--warm--gray-300);
+  --input-text-color: var(--warm--gray-800);
   --form-color-text: var(--warm--gray-900);
   --image-color: var(--warm--gray-200);
   --image-text: var(--warm--gray-700);
@@ -24,8 +25,8 @@
   --footer-color: var(--warm--gray-200);
   --footer-text-color: var(--warm--gray-900);
   --hover-color: var(--blue--dark);
-  --text-input:var(--warm--gray-700);
-  --icon-inverter:100%;
+  --text-input:var(--warm--gray-400);
+  --icon-inverter: 100%;
 }
 
 /* Dark theme */
@@ -34,6 +35,7 @@
   --primary-color: var(--warm--gray-300);
   --secondary-color: var(--warm--gray-700);
   --form-color: var(--warm--gray-800);
+  --input-text-color: var(--warm--gray-800);
   --form-color-text: var(--warm--gray-200);
   --image-color: var(--warm--gray-700);
   --image-text: var(--warm--gray-400);
@@ -46,6 +48,6 @@
   --footer-text-color: var(--warm--gray-300);
   --hover-color: var(--blue--dark);
   --text-input:var(--warm--gray-400);
-  --icon-inverter:0%;
+  --icon-inverter: 0%;
  
 }
