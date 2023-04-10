@@ -1,5 +1,5 @@
 .invalid {
-    transition: all 0.5s ease-in;
+    transition: border 0.25s ease-in;
     border: 3px solid #df0909;
 }
 

@@ -25,6 +25,7 @@ document
 
         reader.readAsDataURL(file);
       } else {
+        document.querySelector("input[type=file]").value = null;
         preview.src = "";
         document.querySelector(".no-image").style.display = "flex";
       }
