@@ -9,6 +9,11 @@
   --blue--dark: #2c5fc4;
 }
 [theme="light"] {
+  --sun-visible: visible;
+  --moon-visible: hidden;
+  --ball-translate: 60px;
+  --toggle-ball: var(--warm--gray-700);
+  --toggle-background: var(--warm--gray-400);
   --background-color:var(--warm--gray-200);
   --primary-color: var(--warm--gray-700);
   --secondary-color: var(--warm--gray-200);
@@ -31,6 +36,11 @@
 
 /* Dark theme */
 [theme="dark"] {
+  --sun-visible: hidden;
+  --moon-visible: visible;
+  --ball-translate: 0px;
+  --toggle-ball: var(--warm--gray-300);
+  --toggle-background: var(--warm--gray-700); 
   --background-color:var(--warm--gray-900);
   --primary-color: var(--warm--gray-300);
   --secondary-color: var(--warm--gray-700);
@@ -51,3 +61,5 @@
   --icon-inverter: 0%;
  
 }
+
+
