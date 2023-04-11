@@ -1,7 +1,7 @@
 <div class="header">
     <h3>Our website</h3>
     <div class="container-header">
-        <input type="checkbox" id="toggle">
+        <input type="checkbox" id="toggle" checked>
         <label class="toggle" for="toggle">
             <i class="icon bx-moon"></i>
             <i class="icon bx-sun"></i>

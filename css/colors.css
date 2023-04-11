@@ -11,7 +11,7 @@
 [theme="light"] {
   --sun-visible: visible;
   --moon-visible: hidden;
-  --ball-translate: 60px;
+  --ball-translate: 51px;
   --toggle-ball: var(--warm--gray-700);
   --toggle-background: var(--warm--gray-400);
   --background-color:var(--warm--gray-200);
@@ -38,7 +38,7 @@
 [theme="dark"] {
   --sun-visible: hidden;
   --moon-visible: visible;
-  --ball-translate: 0px;
+  --ball-translate: 1px;
   --toggle-ball: var(--warm--gray-300);
   --toggle-background: var(--warm--gray-700); 
   --background-color:var(--warm--gray-900);
@@ -59,7 +59,6 @@
   --hover-color: var(--blue--dark);
   --text-input:var(--warm--gray-400);
   --icon-inverter: 0%;
- 
 }
 
 
