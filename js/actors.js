@@ -23,6 +23,12 @@ function getActors() {
   const month = birthdateValue.substring(5, 7);
   const day = birthdateValue.substring(8, 10);
 
+  // Check if the birthdate field is empty
+  if (birthdateValue == "") {
+    newLoading.style.visibility = "hidden";
+    return;
+  }
+
   // Get the actors using an AJAX request to api.php
   const request = new XMLHttpRequest();
   request.open("GET", "api.php?month=" + month + "&day=" + day);
