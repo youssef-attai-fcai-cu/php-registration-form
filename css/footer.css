@@ -1,38 +1,43 @@
 @import "colors.css";
- .footer{
-    width: 100%;
-    background: var(--footer-color);
-    color: var(--footer-text-color);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
- }
-
-.footer .container{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 550px;
+.footer {
+  width: 100%;
+  background: var(--footer-color);
+  color: var(--footer-text-color);
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
-.footer .container h2{
-    display: flex;
-    justify-content: center;
-}
-/* .footer div h3{
-    font-weight: 300;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-} */
 
-.madeby{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+.footer a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.8rem;
 }
-.madeby div{
-    display: flex;
-    flex-direction: column;
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 600px;
+  gap: 10px;
+}
+
+.footer .container h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.madeby {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.madeby > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
