@@ -69,12 +69,14 @@ button {
   border-radius: 36px;
   font-size: 1.2rem;
   line-height: 0;
+  transition: 0.25s ease-in;
   background: var(--background-button);
   color: var( --text-button);
 }
 
 button:hover {
-  background: var(---hover-color);
+  transition: 0.25s ease-in;
+  background: var(--hover-color);
 }
 
 /* a {
