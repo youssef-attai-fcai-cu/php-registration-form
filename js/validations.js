@@ -243,7 +243,5 @@ function validateAddress() {
 submitButton.addEventListener(`click`, () => {
   if (checkEmptyFields()) {
     submitForm();
-  } else {
-    console.log(`Please fill in all the required fields`);
-  }
+  } 
 });
