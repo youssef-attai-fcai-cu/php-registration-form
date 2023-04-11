@@ -1,41 +1,34 @@
-// Initialize variables to store the current file and preview image
-var currentFile = null;
-var preview = document.querySelector("img");
+document.querySelector(".image").addEventListener("click", function () {
+  document.querySelector('input[type="file"]').click();
+});
+
+const currentImage = document.querySelector("img");
+
+function setCurrentSelection(selected) {
+  const reader = new FileReader();
+  reader.onloadend = function () {
+    currentImage.src = reader.result;
+    document.querySelector(".no-image").style.display = "none";
+  };
+
+  reader.readAsDataURL(selected);
+}
 
 document
   .querySelector("input[type=file]")
-  .addEventListener("change", function () {
-    var file = document.querySelector("input[type=file]").files[0];
+  .addEventListener("change", function (e) {
+    const selected = e.target.files[0];
 
-    if (file) {
-      // Store the selected file in the currentFile variable
-      currentFile = file;
-
-      if (
-        file.type === "image/jpeg" ||
-        file.type === "image/png" ||
-        file.type === "image/jpg"
-      ) {
-        var reader = new FileReader();
-
-        reader.onloadend = function () {
-          preview.src = reader.result;
-          document.querySelector(".no-image").style.display = "none";
-        };
-
-        reader.readAsDataURL(file);
-      } else {
-        document.querySelector("input[type=file]").value = null;
-        preview.src = "";
-        document.querySelector(".no-image").style.display = "flex";
-      }
+    if (
+      selected !== undefined &&
+      e.target.value !== "" &&
+      (selected.type == "image/jpg" ||
+        selected.type == "image/jpeg" ||
+        selected.type == "image/png")
+    ) {
+      setCurrentSelection(selected);
+    } else {
+      currentImage.src = "";
+      document.querySelector(".no-image").style.display = "flex";
     }
   });
-
-document.querySelector(".image").addEventListener("click", function () {
-  // Trigger the file input element click event
-  document.querySelector("input[type=file]").click();
-});
-
-// Store the original preview image source in a data attribute
-preview.dataset.originalSrc = preview.src;
