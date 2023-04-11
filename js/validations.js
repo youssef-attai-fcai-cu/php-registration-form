@@ -1,12 +1,5 @@
 // Query Selectors for the input fields
-// <input type="text" name="full_name" placeholder="Full name">
-// <input type="text" name="username" placeholder="Username">
-// <input type="email" name="email" placeholder="Email">
-// <input type="password" name="password" placeholder="Password">
-// <input type="password" name="confirm_password" placeholder="Confirm password">
-// <input type="text" name="birthdate" placeholder="Birthdate" onfocus="(this.type='date')" onblur="(this.type='text')">
-// <input type="tel" name="phone" placeholder="Phone">
-// <input type="text" name="address" placeholder="Address">
+
 const fullNameInput = document.querySelector(`input[name="full_name"]`);
 const usernameInput = document.querySelector(`input[name="username"]`);
 const emailInput = document.querySelector(`input[name="email"]`);
@@ -33,32 +26,7 @@ const submitButton = document.querySelector(`button[type="submit"]`);
 const imageDiv = document.querySelector(".image");
 const uploadImgInput = document.querySelector('input[type="file"]');
 
-// function checkEmptyFields() {
-//   let missing = 0;
-
-//   // foreach loop to check if the input fields are empty
-//   allInputs.forEach((input) => {
-//     if (input.value === ``) {
-//       input.classList.add("invalid");
-//       input.setAttribute("title", "This field is required");
-//       missing++;
-//     } else {
-//       input.classList.remove("invalid");
-//       input.removeAttribute("title");
-//     }
-//   });
-
-//   if (uploadImgInput.value === ``) {
-//     imageDiv.classList.add("invalid");
-//     imageDiv.setAttribute("title", "You have to upload an image");
-//     missing++;
-//   } else {
-//     imageDiv.classList.remove("invalid");
-//     imageDiv.removeAttribute("title");
-//   }
-
-//   return missing == 0;
-// }
+// check if the input fields are empty and validate them if not
 
 function checkEmptyFields() {
   let missing = 0;
@@ -272,7 +240,7 @@ function validateAddress() {
 
 // Grouping all the validations together and calling them when the register button is clicked
 // If there are any errors, the user will be alerted with the respective error message
-submitButton.addEventListener(`click`, (e) => {
+submitButton.addEventListener(`click`, () => {
   if (checkEmptyFields()) {
     submitForm();
   } else {
