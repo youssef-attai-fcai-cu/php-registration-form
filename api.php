@@ -1,7 +1,14 @@
 <?php
 
+// Steps to get the API key:
+// 1. Go to https://rapidapi.com/apidojo/api/online-movie-database/
+// 2. Click on "Subscribe to test" button
+// 3. Select the plan and click on "Subscribe" button
+// 4. Copy your API key from the code snippet on the right side of the page, and paste it below
+$API_KEY = "0c110e1c7amshafecb02fb077708p1a260ejsn62754a6d6f16";
+
 // Get the list of actors born on a specific day and month
-function get_actors($Month, $Day)
+function get_actors($Month, $Day, $API_KEY)
 {
     $curl = curl_init();
 
@@ -16,7 +23,7 @@ function get_actors($Month, $Day)
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => [
             "X-RapidAPI-Host: online-movie-database.p.rapidapi.com",
-            "X-RapidAPI-Key: bbe1c22d34msh322bf4d115b4fa8p195c51jsnec86507826e1"
+            "X-RapidAPI-Key: $API_KEY"
         ],
     ]);
 
@@ -33,7 +40,7 @@ function get_actors($Month, $Day)
 }
 
 // Get the actor's bio
-function get_actor_bio($nconst)
+function get_actor_bio($nconst, $API_KEY)
 {
     $curl = curl_init();
 
@@ -48,7 +55,7 @@ function get_actor_bio($nconst)
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => [
             "X-RapidAPI-Host: online-movie-database.p.rapidapi.com",
-            "X-RapidAPI-Key: bbe1c22d34msh322bf4d115b4fa8p195c51jsnec86507826e1"
+            "X-RapidAPI-Key: $API_KEY"
         ],
     ]);
 
@@ -67,7 +74,7 @@ function get_actor_bio($nconst)
 
 
 // Get the list of actors born on a specific day and month
-$actors_list = get_actors($_GET['month'], $_GET['day']);
+$actors_list = get_actors($_GET['month'], $_GET['day'], $API_KEY);
 
 // Extract the IDs using regular expression
 preg_match_all('/\/name\/([a-z0-9]+)/i', $actors_list, $matches);
@@ -79,7 +86,7 @@ $counter = 0;
 $actors_data = array();
 foreach ($response_ids as $id) {
     $counter++;
-    $actors_data[] = get_actor_bio($id);
+    $actors_data[] = get_actor_bio($id, $API_KEY);
     if ($counter == 3) break;
 }
 
