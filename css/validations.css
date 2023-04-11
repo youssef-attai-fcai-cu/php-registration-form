@@ -1,7 +1,7 @@
 input,
 .image{
-    transition: border 0.25s ease-in;
-    border: 0px solid #000;
+    transition: border 0.25s ease-out;
+    border: 0px solid #ccc;
 }
 
 input.invalid,
@@ -9,11 +9,3 @@ input.invalid,
     transition: border 0.25s ease-in;
     border: 3px solid #df0909;
 }
-
-/* 
-input[title]::before {
-    content: "⚠ ";
-    font-size: smaller;
-    color: red;
-    margin-right: 4px;
-} */
