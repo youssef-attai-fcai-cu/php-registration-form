@@ -23,6 +23,7 @@ const address = document.querySelector('input[name="address"]');
 const successDiv = document.querySelector(".success");
 const formDiv = document.querySelector(".form");
 const backBtn = document.querySelector(".success button");
+const imageDivision = document.querySelector(".image");
 
 backBtn.addEventListener("click", () => {
   successDiv.classList.add("hidden");
@@ -47,9 +48,17 @@ function submitForm(e) {
       } else {
         successDiv.classList.add("hidden");
         formDiv.classList.remove("hidden");
-        usernameInput.classList.add("invalid");
-        console.log("samo3aleko")
-        usernameInput.setAttribute("title", "Username already exists");
+        if (xhr.responseText == "Username already exists") {
+          usernameInput.classList.add("invalid");
+          usernameInput.setAttribute("title", "Username already exists");
+        } else {
+          // this response only happens if the image FOR SOME REASON is corrupted (black woman image)
+          imageDivision.classList.add("invalid");
+          imageDivision.setAttribute(
+            "title",
+            "Please upload a different image"
+          );
+        }
       }
     }
   };
