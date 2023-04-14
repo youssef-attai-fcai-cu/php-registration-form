@@ -20,6 +20,8 @@ const password = document.querySelector('input[name="password"]');
 const birthdate = document.querySelector('input[name="birthdate"]');
 const phone = document.querySelector('input[name="phone"]');
 const address = document.querySelector('input[name="address"]');
+const successDiv = document.querySelector(".success");
+const formDiv = document.querySelector(".form");
 
 // Get the file input
 const fileInput = document.querySelector('input[type="file"]');
@@ -31,7 +33,14 @@ function submitForm(e) {
   xhr.open("POST", "index.php", true);
   xhr.onload = () => {
     if (xhr.status === 200) {
-      console.log(xhr.responseText);
+      if (xhr.responseText === "success") {
+        successDiv.classList.remove("hidden");
+        formDiv.classList.add("hidden");
+      } else {
+        successDiv.classList.add("hidden");
+        formDiv.classList.remove("hidden");
+        console.log(xhr.responseText);
+      }
     }
   };
 

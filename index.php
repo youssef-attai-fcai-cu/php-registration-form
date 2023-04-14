@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/upload.php';
     uploadImage($image);
 
-    die('Success');
+    die('success');
   }
 }
 
@@ -113,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="css/validations.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/success.css">
   <link rel="stylesheet" href="css/toggle.css">
   <script src="js/inputs.js" defer></script>
   <script src="js/theme-switcher.js" defer></script>
@@ -125,6 +126,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <?php include "header.php" ?>
   <div class="wrapper">
+    <div class="success hidden">
+      <div class="green-tick"></div>
+      <h2>Success</h2>
+      <p>You have successfully registered</p>
+    </div>
     <div class="form">
       <h2>Register</h2>
       <div class="container">
