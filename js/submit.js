@@ -29,7 +29,6 @@ backBtn.addEventListener("click", () => {
   formDiv.classList.remove("hidden");
 });
 
-
 // Get the file input
 const fileInput = document.querySelector('input[type="file"]');
 
@@ -43,9 +42,13 @@ function submitForm(e) {
       if (xhr.responseText === "success") {
         successDiv.classList.remove("hidden");
         formDiv.classList.add("hidden");
+        usernameInput.classList.remove("invalid");
+        usernameInput.removeAttribute("title");
       } else {
         successDiv.classList.add("hidden");
         formDiv.classList.remove("hidden");
+        usernameInput.classList.add("invalid");
+        usernameInput.setAttribute("title", "Username already exists");
       }
     }
   };
