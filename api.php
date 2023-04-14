@@ -80,9 +80,9 @@ $actors_list = get_actors($_GET['month'], $_GET['day'], $API_KEY);
 preg_match_all('/\/name\/([a-z0-9]+)/i', $actors_list, $matches);
 // Get all matching IDs
 $response_ids = $matches[1];
-// Counter to limit the number of actors to 10
+// Counter to limit the number of actors to 3
 $counter = 0;
-// Get the actor's names and images for the first 10 actors
+// Get the actor's names and images for the first 3 actors
 $actors_data = array();
 foreach ($response_ids as $id) {
     $counter++;
