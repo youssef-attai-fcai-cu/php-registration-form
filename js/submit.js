@@ -48,6 +48,7 @@ function submitForm(e) {
         successDiv.classList.add("hidden");
         formDiv.classList.remove("hidden");
         usernameInput.classList.add("invalid");
+        console.log("samo3aleko")
         usernameInput.setAttribute("title", "Username already exists");
       }
     }
