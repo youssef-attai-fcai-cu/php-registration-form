@@ -5,7 +5,7 @@
 // 2. Click on "Subscribe to test" button
 // 3. Select the plan and click on "Subscribe" button
 // 4. Copy your API key from the code snippet on the right side of the page, and paste it below
-$API_KEY = "0c110e1c7amshafecb02fb077708p1a260ejsn62754a6d6f16";
+$API_KEY = "b56036c2a9msh8e3d79214b6ac0fp1f0aa1jsn81d4de64253b";
 
 // Get the list of actors born on a specific day and month
 function get_actors($Month, $Day, $API_KEY)
