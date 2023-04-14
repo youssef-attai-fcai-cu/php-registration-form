@@ -72,8 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   include __DIR__ . '/db.php';
 
-  $database = new Database("localhost", "project", "attai", "j");
-
   // Save the user data in the database
   $full_name = $_POST['full_name'];
   $username = $_POST['username'];
@@ -136,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="container">
         <div class="fields">
           <input type="text" name="full_name" placeholder="Full name">
-          <input type="text" name="username" placeholder="Username">
+          <input type="text" name="username" placeholder="Username" onblur="checkUsernameExists()">
           <input type="email" name="email" placeholder="Email">
           <input type="password" name="password" placeholder="Password">
           <input type="password" name="confirm_password" placeholder="Confirm password">

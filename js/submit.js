@@ -39,7 +39,6 @@ function submitForm(e) {
       } else {
         successDiv.classList.add("hidden");
         formDiv.classList.remove("hidden");
-        console.log(xhr.responseText);
       }
     }
   };

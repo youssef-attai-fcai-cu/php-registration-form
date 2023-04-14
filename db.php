@@ -93,3 +93,5 @@ class Database
         $this->conn = null;
     }
 }
+
+$database = new Database("localhost", "project", "attai", "j");

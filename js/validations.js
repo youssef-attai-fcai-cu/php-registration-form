@@ -238,6 +238,27 @@ function validateAddress() {
   }
 }
 
+// using Ajax to check if the username already exists in the database
+function checkUsernameExists() {
+  const username = usernameInput.value;
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", `checkusername.php?username=${username}`, true);
+  xhr.onload = function () {
+    if (this.status === 200) {
+      if (xhr.responseText == "fail") {
+        usernameInput.classList.add("invalid");
+        usernameInput.setAttribute("title", "Username already exists");
+        return false;
+      } else {
+        usernameInput.classList.remove("invalid");
+        usernameInput.removeAttribute("title");
+        return true;
+      }
+    }
+  };
+  xhr.send();
+}
+
 // Grouping all the validations together and calling them when the register button is clicked
 // If there are any errors, the user will be alerted with the respective error message
 submitButton.addEventListener(`click`, () => {
