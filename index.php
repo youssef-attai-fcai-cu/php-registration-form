@@ -1,9 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  // echo post data
-  echo print_r($_POST, true);
-
   // Make sure all fields exist
   // check them one by one to provide clear error messages
   if (!isset($_POST['full_name']) || empty($_POST['full_name'])) {
@@ -75,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   include __DIR__ . '/db.php';
 
-  $database = new Database("localhost", "project", "attai", "YOUR_PASSWORD");
+  $database = new Database("localhost", "project", "attai", "j");
 
   // Save the user data in the database
   $full_name = $_POST['full_name'];
@@ -86,8 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $phone = $_POST['phone'];
   $address = $_POST['address'];
   $image = $username . '.' . pathinfo($_FILES['user_image']['name'], PATHINFO_EXTENSION);
-
-
 
   // Make sure the username is unique
   if ($database->user_exists($username)) {
