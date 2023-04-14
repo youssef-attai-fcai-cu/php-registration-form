@@ -22,6 +22,13 @@ const phone = document.querySelector('input[name="phone"]');
 const address = document.querySelector('input[name="address"]');
 const successDiv = document.querySelector(".success");
 const formDiv = document.querySelector(".form");
+const backBtn = document.querySelector(".success button");
+
+backBtn.addEventListener("click", () => {
+  successDiv.classList.add("hidden");
+  formDiv.classList.remove("hidden");
+});
+
 
 // Get the file input
 const fileInput = document.querySelector('input[type="file"]');

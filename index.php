@@ -128,6 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="green-tick"></div>
       <h2>Success</h2>
       <p>You have successfully registered</p>
+      <button>Back</button>
     </div>
     <div class="form">
       <h2>Register</h2>
