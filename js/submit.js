@@ -52,12 +52,9 @@ function submitForm(e) {
           usernameInput.classList.add("invalid");
           usernameInput.setAttribute("title", "Username already exists");
         } else {
-          // this response only happens if the image FOR SOME REASON is corrupted (black woman image)
+          // this response only happens if the image size exceeds 5MB
           imageDivision.classList.add("invalid");
-          imageDivision.setAttribute(
-            "title",
-            "Please upload a different image"
-          );
+          imageDivision.setAttribute("title", "Maximum image size is 5MB");
         }
       }
     }
