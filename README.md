@@ -1,5 +1,9 @@
 # Registration form
 
+## Preview
+
+![Preview](./preview.gif)
+
 ## Overview 
 
 The form includes the following details about a user:
