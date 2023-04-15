@@ -7,6 +7,6 @@
             <i class="icon bx-sun"></i>
             <span class="ball"></span>
         </label>
-        <a href="#" class="my-icon" target="_blank"></a>
+        <a href="https://github.com/youssef-attai/php-registration-form" class="my-icon" target="_blank"></a>
     </div>
 </div>
