@@ -25,10 +25,9 @@ Beside the birth date field in the form, there should be a button that when clic
 
 ## How to run:
 
-Before running, take a look at [php.ini](./php.ini) and make sure that the `extensions_dir` is correct.
+Before running, take a look at [php.ini](./php.ini) and make sure that the `extensions_dir` variable is defined correctly.
 
-Also, open [db.php](./db.php), and change the database credentials.
-
+Also, open [db.php](./db.php), and change the database credentials:
 
 ```php
 $database = new Database("<HOST>", "<DATABASE_NAME>", "<USERNAME>", "<PASSWORD>");
