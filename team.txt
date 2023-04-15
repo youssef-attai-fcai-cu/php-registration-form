@@ -1,0 +1,8 @@
++-----------+----------------+-------------------------------------------------------------+
+|Student ID | Student Name   | Roles and Responsibilities                                  |
++-----------+----------------+-------------------------------------------------------------+
+|20200254   | Sherif Hassan  | Database, styling, header and footer, theme switch          |
+|20200366   | Amr Ibrahim    | API, theme switch, Ajax                                     |
+|20200367   | Amr Khaled     | Client-side validations, image upload, Ajax                 |
+|20200645   | Youssef Galal  | Server-side validations, form structure, image upload, Ajax |
++-----------+----------------+-------------------------------------------------------------+

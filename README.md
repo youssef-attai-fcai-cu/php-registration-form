@@ -23,13 +23,19 @@ Beside the birth date field in the form, there should be a button that when clic
 - `actors/get-bio`: Retrieves actor details by passing an actor ID.
 
 
-
 ## How to run:
 
-for windows
+Before running, take a look on [php.ini](./php.ini) file and make sure that the `extensions_dir` is correct.
+
+Also, open [db.php](./db.php), and change the database credentials.
+
+
+```php
+$database = new Database("<HOST>", "<DATABASE_NAME>", "<USERNAME>", "<PASSWORD>");
+```
+
+Then, run the following command:
+
 ```bash
 php -S localhost:8000 -c ./php.ini
 ```
-
-
-
