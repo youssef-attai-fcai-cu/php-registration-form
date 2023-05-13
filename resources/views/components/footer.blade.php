@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="container">
-        <h2>Made by:</h2>
+    <h2><?php echo __('strings.madeby') ?>:</h2>
         <div class="madeby">
             <div>
                 <h4>Sherif Hassan</h4><a href="https://www.linkedin.com/in/sherif3hassan/">Sherif Hassan</a>

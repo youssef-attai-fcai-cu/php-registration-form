@@ -18,4 +18,7 @@ return [
     "back" => "Zurück",
     "mail" => "Ein neuer Benutzer :username ist im System registriert.",
     "subject" => "Neuer registrierter Benutzer",
+    "emailtaken" => "Diese E-Mail ist bereits vergeben.",
+    "usernametaken" => "Dieser Benutzername ist bereits vergeben.",
+    "smthwrong" => "Etwas ist schief gelaufen.",
 ];

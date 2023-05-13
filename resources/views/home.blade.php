@@ -1,51 +1,63 @@
 @extends('layout')
 
 @section('content')
+@if (isset($error))
+<p style="
+    padding: 10px;
+    color: red;
+    font-weight: bold;
+    font-size: 1.2rem;
+">{{ $error }}</p>
+@endif
 <div class="form">
-<h2>Register</h2>
-<form method="POST" action="/register">
+<h2><?php echo __('strings.register')  ?></h2>
+<form method="POST" action=<?php
+    $locale = app()->getLocale();
+    echo "/$locale/register";
+?>
+>
   @csrf
   <div class="container">
     <div class="fields">
-      <input type="text" name="full_name" placeholder="Full name"
+    <input type="text" name="full_name" placeholder="<?php echo __('strings.fullname')  ?>"
         value="{{ old('full_name') }}"
         @error('full_name') class="invalid" title="{{ $message }}" @enderror
         >
-      <input type="text" name="username" placeholder="Username"
+        <input type="text" name="username" placeholder="<?php echo __('strings.username')  ?>"
         value="{{ old('username') }}"
         @error('username') class="invalid" title="{{ $message }}" @enderror
         >
-      <input type="email" name="email" placeholder="Email"
+        <input type="email" name="email" placeholder="<?php echo __('strings.email')  ?>"
         value="{{ old('email') }}"
         @error('email') class="invalid" title="{{ $message }}" @enderror
         >
-      <input type="password" name="password" placeholder="Password"
+        <input type="password" name="password" placeholder="<?php echo __('strings.password')  ?>"
         @error('password') class="invalid" title="{{ $message }}" @enderror
         >
-      <input type="password" name="confirm_password" placeholder="Confirm password"
+      <input type="password" name="confirm_password" placeholder="<?php echo __('strings.confirmpassword') ?>"
         @error('confirm_password') class="invalid" title="{{ $message }}" @enderror
         >
-      <input type="date" name="birthdate" placeholder="Birthdate"
+      <input type="date" name="birthdate" placeholder="<?php echo __('strings.birthdate') ?>"
         value="{{ old('birthdate') }}"
         @error('birthdate') class="invalid" title="{{ $message }}" @enderror
         >
-      <input type="tel" name="phone" placeholder="Phone"
+        <input type="tel" name="phone" placeholder="<?php echo __('strings.phone') ?>"
         value="{{ old('phone') }}"
         @error('phone') class="invalid" title="{{ $message }}" @enderror
         >
-      <input type="text" name="address" placeholder="Address"
+        <input type="text" name="address" placeholder="<?php echo __('strings.address') ?>"
         value="{{ old('address') }}"
         @error('address') class="invalid" title="{{ $message }}" @enderror
         >
     </div>
     <div class="side">
-      <h3>Actors born on the same day:</h3>
+    <h3><?php echo __('strings.actors') ?>:</h3>
       <div class="actors">
         <div class="loading"></div>
       </div>
     </div>
 </div>
-<button type="submit">Register</button>
+<button type="submit"><?php echo __('strings.register') ?></button>
 </form>
 <script>
     const inputs = document.querySelectorAll('input');
@@ -104,7 +116,7 @@ function getActors() {
     const actors = JSON.parse(request.responseText);
 
     // Loop through the actors
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 5; i++) {
       // Make another AJAX request to get the actor bio
       const request2 = new XMLHttpRequest();
       const url2 = `https://online-movie-database.p.rapidapi.com/actors/get-bio?nconst=${getnconst(actors[i])}`;

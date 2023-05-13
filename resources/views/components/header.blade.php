@@ -1,5 +1,5 @@
 <div class="header">
-    <h3>Our website</h3>
+<h3><?php echo __('strings.website') ?></h3>
     <div class="container-header">
         <input type="checkbox" id="toggle" checked>
         <label class="toggle" for="toggle">

@@ -5,7 +5,7 @@
 </head>
 <body>
 <p>
-    A new user {{$username}} is registered to the system.
+<?php echo __("strings.mail", ["username" => $username]) ?>
 </p>
 </body>
 </html>

@@ -18,4 +18,7 @@ return [
     "back" => "Back",
     "mail" => "A new user :username is registered to the system",
     "subject" => "New registered user",
+    "emailtaken" => "This email is already taken.",
+    "usernametaken" => "This username is already taken.",
+    "smthwrong" => "Something went wrong.",
 ];

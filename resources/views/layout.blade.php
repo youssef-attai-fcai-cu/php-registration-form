@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Our Website</title>
+  <title><?php echo __('strings.register') . ' - ' . __('strings.website') ?></title>
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
   <link rel="stylesheet" href="{{ asset('css/form.css') }}">
   <link rel="stylesheet" href="{{ asset('css/validations.css') }}">
