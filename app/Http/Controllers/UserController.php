@@ -34,9 +34,21 @@ class UserController extends Controller
 
         // create new user
         $user = new User($formFields);
-        $user->save();
 
-         Mail::to('lewolfje@gmail.com')->send(new UserRegistered($user->username));
+        try {
+            $user->save();
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            if (strpos($error, 'users_email_unique') !== false) {
+                return view('home', ['error' => __('strings.emailtaken')]);
+            } else if (strpos($error, 'users_username_unique') !== false) {
+                return view('home', ['error' => __('strings.usernametaken')]);
+            } else {
+                return view('home', ['error' => __('strings.smthwrong')]);
+            }
+        }
+
+        Mail::to('husseinessa855@gmail.com')->send(new UserRegistered($user->username));
 
         // return response
         return view('success');
