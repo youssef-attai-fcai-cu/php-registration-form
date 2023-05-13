@@ -28,7 +28,7 @@ class UserController extends Controller
             ],
             'confirm_password' => 'required|same:password',
             'birthdate' => 'required|date',
-            'phone' => 'required|numeric',
+            'phone' => 'required|numeric|digits:10',
             'address' => 'required',
         ]);
 
