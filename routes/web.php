@@ -18,4 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::post('/register', [UserController::class, 'store']);
+Route::get('/{locale}', function () {
+    return view('home');
+})->middleware('localeMiddleware');
+
+Route::post('/{locale}/register', [UserController::class, 'store'])->middleware('localeMiddleware');
+
