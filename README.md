@@ -3,7 +3,7 @@
 - [x] Use the born on the same day API, call it using AJAX.
 - [ ] Make sure locale changes strings everywhere, even in the UserRegistered mail, and the error messages.
 - [ ] Add a unit test.
-- [ ] Configure a gmail account to send emails.
+- [x] Configure a gmail account to send emails.
 - [ ] Implement client-side validations.
 
 ## How to configure locale
