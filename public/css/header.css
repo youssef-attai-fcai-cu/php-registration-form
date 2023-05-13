@@ -1,0 +1,85 @@
+@import "colors.css";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--header-color);
+    width: 100%;
+    padding: 10px 100px;
+    margin-top: 70px;
+}
+
+.container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h3 {
+    color: var(--header-text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.my-icon {
+    background: url(../svg/GitHub.svg) no-repeat center center;
+    width: 52px;
+    height: 52px;
+    filter: invert(var(--icon-inverter));
+    margin-inline: 25px;
+}
+
+.theme-switch-container {
+    display: flex;
+    align-items: center;
+}
+
+.theme-slider {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-slider input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
