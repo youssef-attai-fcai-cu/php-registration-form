@@ -15,7 +15,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // validate the request
-        $formFields = request()->validate([
+        $formFields = $this->validate($request, [
             'full_name' => 'required',
             'username' => 'required',
             'email' => 'required|email',
