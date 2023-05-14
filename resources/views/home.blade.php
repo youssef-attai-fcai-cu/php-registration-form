@@ -20,32 +20,41 @@
   <div class="container">
     <div class="fields">
     <input type="text" name="full_name" placeholder="<?php echo __('strings.fullname')  ?>"
+        required
         value="{{ old('full_name') }}"
         @error('full_name') class="invalid" title="{{ $message }}" @enderror
         >
         <input type="text" name="username" placeholder="<?php echo __('strings.username')  ?>"
+        required
         value="{{ old('username') }}"
         @error('username') class="invalid" title="{{ $message }}" @enderror
         >
         <input type="email" name="email" placeholder="<?php echo __('strings.email')  ?>"
+        required
         value="{{ old('email') }}"
         @error('email') class="invalid" title="{{ $message }}" @enderror
         >
         <input type="password" name="password" placeholder="<?php echo __('strings.password')  ?>"
+        required
         @error('password') class="invalid" title="{{ $message }}" @enderror
         >
       <input type="password" name="confirm_password" placeholder="<?php echo __('strings.confirmpassword') ?>"
+        required
         @error('confirm_password') class="invalid" title="{{ $message }}" @enderror
         >
       <input type="date" name="birthdate" placeholder="<?php echo __('strings.birthdate') ?>"
+        required
         value="{{ old('birthdate') }}"
         @error('birthdate') class="invalid" title="{{ $message }}" @enderror
         >
         <input type="tel" name="phone" placeholder="<?php echo __('strings.phone') ?>"
+        required
+        minlength="10" maxlength="10"
         value="{{ old('phone') }}"
         @error('phone') class="invalid" title="{{ $message }}" @enderror
         >
         <input type="text" name="address" placeholder="<?php echo __('strings.address') ?>"
+        required
         value="{{ old('address') }}"
         @error('address') class="invalid" title="{{ $message }}" @enderror
         >
